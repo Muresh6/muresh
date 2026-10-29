@@ -1,43 +1,28 @@
-# Muresh — developer portfolio
+# Muresh — Software Developer Portfolio
 
-A responsive, static portfolio ready for GitHub Pages. No paid services, build tools, tracking scripts, database, API keys or external fonts are required. All assets are built with HTML, CSS and inline SVG.
+Live site: https://muresh6.github.io/muresh/
 
-## Publish with GitHub Pages
+A buildless, responsive portfolio with a midnight-and-mint theme, personal photos, a cute running cartoon mascot and interactive engineering demonstrations.
 
-1. Sign into GitHub. Create a **public** repository named `YOUR-USERNAME.github.io`, replacing `YOUR-USERNAME` with your actual GitHub username. This publishes at `https://YOUR-USERNAME.github.io`.
-2. Extract this ZIP. Upload the **contents** of `muresh-portfolio` to the repository root: `index.html`, `styles.css`, `script.js`, `.nojekyll` and this README. Do not upload the ZIP or nest the site inside an extra folder. Using Git will include `.nojekyll` even if a file browser hides it; this site also works without that empty file.
-3. In the repository, open **Settings → Pages**. Under **Build and deployment**, choose **Deploy from a branch**, then **main** and **/(root)**. Click **Save**.
-4. Wait for the Pages deployment to complete. GitHub shows the live URL on the same screen. If you already have a personal Pages repository, update it deliberately instead of overwriting unrelated work.
+## Engineering lab
 
-For a project repository such as `portfolio`, use the same steps. Its address will be `https://YOUR-USERNAME.github.io/portfolio/`. All file links are relative, so either layout works.
+- **ReleaseOps:** staged deployment simulation with health-check failure injection and rollback. Timers are cancelled when leaving the demo.
+- **QueryLab:** a restricted JavaScript SQL interpreter over eight synthetic orders, including filtering, sorting, limiting, regional aggregation and CSV export. It never evaluates arbitrary JavaScript or SQL.
+- **API Studio:** local request simulation with 200, 201, 400, 401, 404 and 422 responses. JSON validation and mock authorization are demonstrated; no network requests or persistence occur.
+- **Client feedback:** a rating/review form prepares an email. It never claims a review was submitted or stored; no fabricated testimonials are shown.
 
-## Content and contact
+## Files
 
-- Display name: Muresh.
-- Public email: jrmuresh11@gmail.com.
-- WhatsApp: +60 10-391 8896.
-- Contact buttons open the visitor's email application or WhatsApp. This site does not submit or store enquiries itself.
-- The owner supplied the public contact details. To change them, edit the email and WhatsApp links in `index.html`.
-- Project names and interfaces are original illustrative concepts, not claims of completed client commissions. All demo figures are fictional. No employer screenshots, private source code or manufacturing data are included.
-- Bloom Kitchen has a working menu filter. Northline has a local quote-brief builder that opens WhatsApp to Muresh only when the user chooses to send it. Flowboard has working status filters and a text search.
+`index.html`, `styles.css`, `dark.css`, `engineering.css`, `script.js`, `engineering.js` and `assets/` are served directly by GitHub Pages from `main` / root. `.nojekyll` disables Jekyll processing. No install or build step is needed.
 
-## Edit and preview
+The original photo-based portrait and the four-frame running cartoon were generated using the built-in image generator with the owner's supplied reference photos. Cartoon Yourself avatar guidance and Animation Maker web-animation guidance informed the design. The runner uses a sprite strip and CSS keyframes, not a rigged 3D model. The matching GIF is available for a GitHub profile README.
 
-Open `index.html` in a current browser. All interactions run locally. Edit text in `index.html`, appearance in `styles.css`, and concept demo interactions in `script.js`.
+The pause button and OS reduced-motion preference stop decorative animation. Images are compressed WebP files; source photos are not included. Public contact information is included with the owner's permission.
 
-## Hosting scope
+## GitHub profile README
 
-GitHub Pages is static hosting: it cannot run a .NET backend or SQL Server database. GitHub Free requires the Pages source repository to be public. Keep secrets and private data out of the repository.
+`profile/README.md` is the prepared profile introduction. To display it on the account overview, its contents must be the root `README.md` of a public repository named `Muresh6/Muresh6`. This portfolio repository remains `Muresh6/muresh`.
 
-Use this site as a personal portfolio. GitHub Pages is not allowed as free hosting for running an online business, ecommerce, a site primarily facilitating commercial transactions, or commercial SaaS. Check current GitHub terms before adapting it for paid client hosting:
+## Validation
 
-- https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits
-- https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages
-
-A custom domain is optional and costs extra. GitHub Pages can supply a free `github.io` address and HTTPS.
-
-## Dark portfolio update
-
-Midnight navy and mint theme in `dark.css`. Portrait and supplied photos in `assets/` are optimized WebP files. The hero uses a generated 3D-style illustration with CSS floating, orbit and cursor effects, plus pointer-driven perspective tilt. This is an animated illustration, not a rigged 3D model or video. Pause control and OS reduced-motion preference disable motion. Original interactive demos remain browser-only.
-
-Avatar generated with the built-in image generator using the owner’s supplied identity references; direction: recognizable wavy black hair, moustache and goatee, professional black outfit and laptop, animated-film 3D styling, navy background with mint rim lighting. Cartoon Yourself avatar guidance and Animation Maker web-animation guidance informed the update.
+JavaScript syntax, HTML IDs, local asset paths and fragment targets were checked. Query and API helpers passed 12 behavior checks. The preceding dark-theme version passed desktop/mobile browser checks. Browser QA for this latest lab/runner update was unavailable because the browser service timed out; it has not been claimed as visually verified.

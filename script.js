@@ -127,3 +127,17 @@ avatarScene.addEventListener('pointerleave', () => {
   avatarScene.style.removeProperty('--rx');
   avatarScene.style.removeProperty('--ry');
 });
+
+// Client feedback is explicitly email-based; it never pretends to store a review.
+document.querySelector('#feedback-form').addEventListener('submit', event => {
+ event.preventDefault();
+ const data=new FormData(event.currentTarget);
+ const name=String(data.get('name')).trim(), project=String(data.get('project')).trim(), review=String(data.get('review')).trim();
+ if(!name||!project||!review){document.querySelector('#feedback-result').textContent='Please enter your name, project and feedback.';return;}
+ const text=`Client feedback\nName: ${name}\nProject/company: ${project}\nRating: ${data.get('rating')}/5\n\n${review}\n\nPlease contact me before publishing this feedback.`;
+ const result=document.querySelector('#feedback-result');result.replaceChildren();
+ const preview=document.createElement('pre');preview.textContent=text;
+ const link=document.createElement('a');link.href='mailto:jrmuresh11@gmail.com?subject='+encodeURIComponent('Portfolio client feedback')+'&body='+encodeURIComponent(text);link.textContent='Open your email app to send feedback ↗';
+ const note=document.createElement('p');note.textContent='Your feedback has not been sent. Use the link below, or copy the preview and email jrmuresh11@gmail.com.';
+ result.append(note,preview,link);
+});
