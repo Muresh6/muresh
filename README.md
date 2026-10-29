@@ -35,3 +35,9 @@ Use this site as a personal portfolio. GitHub Pages is not allowed as free hosti
 - https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages
 
 A custom domain is optional and costs extra. GitHub Pages can supply a free `github.io` address and HTTPS.
+
+## Dark portfolio update
+
+Midnight navy and mint theme in `dark.css`. Portrait and supplied photos in `assets/` are optimized WebP files. The hero uses a generated 3D-style illustration with CSS floating, orbit and cursor effects, plus pointer-driven perspective tilt. This is an animated illustration, not a rigged 3D model or video. Pause control and OS reduced-motion preference disable motion. Original interactive demos remain browser-only.
+
+Avatar generated with the built-in image generator using the owner’s supplied identity references; direction: recognizable wavy black hair, moustache and goatee, professional black outfit and laptop, animated-film 3D styling, navy background with mint rim lighting. Cartoon Yourself avatar guidance and Animation Maker web-animation guidance informed the update.

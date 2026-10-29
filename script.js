@@ -99,3 +99,31 @@ document.querySelectorAll('[data-project]').forEach(button=>button.addEventListe
   document.body.classList.add('modal-open');
   document.querySelector('.dialog-close').focus();
 }));
+
+// Subtle illustration motion; the OS preference and visitor control both win.
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+const motionToggle = document.querySelector('#motion-toggle');
+const avatarScene = document.querySelector('#avatar-scene');
+let manuallyPaused = false;
+function syncMotion() {
+  const paused = manuallyPaused || reducedMotion.matches;
+  document.body.classList.toggle('motion-paused', paused);
+  motionToggle.textContent = reducedMotion.matches ? 'Reduced motion' : paused ? 'Resume motion' : 'Pause motion';
+  motionToggle.setAttribute('aria-pressed', String(paused));
+  motionToggle.disabled = reducedMotion.matches;
+  avatarScene.style.removeProperty('--rx');
+  avatarScene.style.removeProperty('--ry');
+}
+motionToggle.addEventListener('click', () => { manuallyPaused = !manuallyPaused; syncMotion(); });
+reducedMotion.addEventListener('change', syncMotion);
+syncMotion();
+avatarScene.addEventListener('pointermove', event => {
+  if (event.pointerType !== 'mouse' || document.body.classList.contains('motion-paused')) return;
+  const bounds = avatarScene.getBoundingClientRect();
+  avatarScene.style.setProperty('--ry', `${((event.clientX - bounds.left) / bounds.width - .5) * 12}deg`);
+  avatarScene.style.setProperty('--rx', `${((event.clientY - bounds.top) / bounds.height - .5) * -8}deg`);
+});
+avatarScene.addEventListener('pointerleave', () => {
+  avatarScene.style.removeProperty('--rx');
+  avatarScene.style.removeProperty('--ry');
+});
